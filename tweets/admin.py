@@ -4,7 +4,11 @@ from .models import Tweet, Like
 
 @admin.register(Tweet)
 class TweetAdmin(admin.ModelAdmin):
-    pass
+    list_display=(
+        "payload",
+        "user",
+        "total_likes",
+    )
 
 
 @admin.register(Like)
