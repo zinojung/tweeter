@@ -5,10 +5,6 @@ from django.contrib.auth.models import AbstractUser
 
 class User(AbstractUser):
 
-    class LanguageChoices(models.TextChoices):
-        KR = ("kr", "Korean")
-        EN = ("en", "English")
-
     first_name = models.CharField(
         max_length=150, editable=False
     )
