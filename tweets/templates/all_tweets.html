@@ -1,0 +1,8 @@
+<h3>Tweets Timeline</h3>
+<ul>
+    {% for tweet in tweets %}
+        <li>{{tweet.user}} : {{tweet.payload}}</li>
+        <p>{{tweet.created_at}}</p>
+        <br />
+    {% endfor %}
+</ul>
