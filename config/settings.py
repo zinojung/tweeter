@@ -30,6 +30,10 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+THIRD_PARTH_APPS = [
+    'rest_framework',
+]
+
 CUSTOM_APPS = [
     "common.apps.CommonConfig",
     "users.apps.UsersConfig",
@@ -45,7 +49,7 @@ SYSTEM_APPS = [
     'django.contrib.staticfiles',
 ]
 
-INSTALLED_APPS = CUSTOM_APPS + SYSTEM_APPS
+INSTALLED_APPS = CUSTOM_APPS + SYSTEM_APPS + THIRD_PARTH_APPS
 
 
 MIDDLEWARE = [
@@ -133,3 +137,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Auth
 AUTH_USER_MODEL = 'users.User'
+
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.SessionAuthentication",
+        "config.authentication.TrustMeBroAuthentication",
+    ]
+}
